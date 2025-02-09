@@ -3,6 +3,9 @@ name: Backend CI/CD
 on:
   push:
     branches: [ main ]
+    
+permissions:
+  contents: write
 
 jobs:
   build-and-push:
