@@ -1,6 +1,9 @@
-FROM golang:1.21-alpine AS backend-builder
+FROM golang:1.23-alpine AS backend-builder
 WORKDIR /app
-COPY go.mod .
+
+# Initialize go.mod manually
+RUN go mod init main
+
 COPY main.go .
 RUN go build -o main
 
