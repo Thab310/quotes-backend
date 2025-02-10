@@ -1,4 +1,4 @@
-name: Backend CI/CD
+name: Backend CI
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
       id: version
       run: |
         # Get the latest tag
-        latest_tag=$(git describe --tags --abbrev=0 --match "backend-v*" 2>/dev/null || echo "backend-v0.0.0")
+        latest_tag=$(git describe --tags --abbrev=0 --match "backend-v*" 2>/dev/null || echo "backend-v0.1.0")
         # Increment patch version
         current_version=${latest_tag#backend-v}
         IFS='.' read -r major minor patch <<< "$current_version"
