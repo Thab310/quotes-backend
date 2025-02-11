@@ -46,7 +46,7 @@ func main() {
 
 	http.HandleFunc("/api/quotes", enableCORS(getQuotes))
 
-	log.Printf("Server starting on port %s", port)
+	log.Printf("Server starting on port %s!", port)
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatal(err)
 	}
